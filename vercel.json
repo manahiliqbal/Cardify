@@ -8,18 +8,18 @@
         }
       },
       {
-        "src": "flashcards-server/server.js",
+        "src": "flashcards-server/server.js", 
         "use": "@vercel/node"
       }
     ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/flashcards-server/server.js"
+    "rewrites": [
+      { 
+        "source": "/api/(.*)", 
+        "destination": "/flashcards-server/server.js" 
       },
-      {
-        "src": "/(.*)",
-        "dest": "/flashcards-client/$1"
+      { 
+        "source": "/(.*)", 
+        "destination": "/flashcards-client/$1" 
       }
     ]
   }
