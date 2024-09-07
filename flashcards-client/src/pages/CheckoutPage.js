@@ -10,7 +10,7 @@ const CheckoutForm = () => {
   const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
-    fetch('/create-payment-intent', {
+    fetch('http://localhost:5000/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const CheckoutForm = () => {
 
     const cardElement = elements.getElement(CardElement);
 
-    const { error} = await stripe.confirmCardPayment(clientSecret, {
+    const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: cardElement,
       },

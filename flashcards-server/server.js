@@ -11,7 +11,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const flashcardRoutes = require('./routes/flashcardRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
-const authRoutes = require('./routes/authRoutes');
+// const authRoutes = require('./routes/authRoutes');
 
 
 const app = express();
@@ -29,9 +29,9 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch((err) => console.error('MongoDB connection error:', err));
 
 
-app.use('/api/flashcard', flashcardRoutes); 
+app.use('/api/flashcards', flashcardRoutes); 
 app.use('/api/payment', paymentRoutes);
-app.use('/api', authRoutes);
+app.use('/', require('./routes/authRoutes'));
 
 app.use(express.static(path.join(__dirname, '..', 'flashcards-client', 'build')));
 

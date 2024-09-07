@@ -8,11 +8,11 @@ const DashboardPage = () => {
   const [error, setError] = useState(null);      
   const token = localStorage.getItem('token');
   const navigate = useNavigate();  
-  
+
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/flashcard`, {
+        const response = await fetch('/api/flashcards', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const DashboardPage = () => {
       fetchFlashcards(); 
     } else {
       console.error('No token found, redirecting to login page');
-      navigate('/api/login');  
+      navigate('/login');  
     }
   }, [token, navigate]);
 
