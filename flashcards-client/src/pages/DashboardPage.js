@@ -8,11 +8,11 @@ const DashboardPage = () => {
   const [error, setError] = useState(null);      
   const token = localStorage.getItem('token');
   const navigate = useNavigate();  
-
+  
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
-        const response = await fetch('/api/flashcards', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/flashcards`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

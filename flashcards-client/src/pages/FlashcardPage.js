@@ -18,7 +18,7 @@ const FlashcardPage = () => {
 
     try {
       const token = localStorage.getItem('token'); 
-      const response = await fetch('/api/flashcards', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/flashcards`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
