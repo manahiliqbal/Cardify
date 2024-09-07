@@ -46,6 +46,8 @@ const LoginPage = () => {
         <h2 className="text-3xl font-semibold mb-6 text-center text-white">
           Log In to Your Account
         </h2>
+        {error && <div className="bg-red-500 text-white p-2 mb-4 rounded">{error}</div>}
+        {message && <div className="bg-green-500 text-white p-2 mb-4 rounded">{message}</div>}
         <div className="mb-4">
           <label
             className="block text-white-700 text-sm font-bold mb-2"
