@@ -10,7 +10,7 @@ const CheckoutForm = () => {
   const [clientSecret, setClientSecret] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch('https://cardify-7j28.onrender.com/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
