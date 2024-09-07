@@ -12,7 +12,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/flashcards`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/flashcard`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const DashboardPage = () => {
       fetchFlashcards(); 
     } else {
       console.error('No token found, redirecting to login page');
-      navigate('/login');  
+      navigate('/api/login');  
     }
   }, [token, navigate]);
 

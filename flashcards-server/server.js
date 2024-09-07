@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch((err) => console.error('MongoDB connection error:', err));
 
 
-app.use('/api/flashcards', flashcardRoutes); 
+app.use('/api/flashcard', flashcardRoutes); 
 app.use('/api/payment', paymentRoutes);
 app.use('/api', authRoutes);
 
