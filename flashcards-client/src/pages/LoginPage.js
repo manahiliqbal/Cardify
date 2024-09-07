@@ -23,7 +23,7 @@ const LoginPage = () => {
 
     try {
       
-      const res = await axios.post('http://localhost:5000/login', formData);
+      const res = await axios.post('https://cardify-7j28.onrender.com/login', formData);
       setMessage('Login successful! Welcome back.');
       localStorage.setItem('token', res.data.token); 
       

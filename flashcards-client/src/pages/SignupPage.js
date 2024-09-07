@@ -24,7 +24,7 @@ const SignupPage = () => {
     setErrorMessage('');
     try {
       console.log(formData); 
-      const res = await axios.post('http://localhost:5000/signup', formData);
+      const res = await axios.post('https://cardify-7j28.onrender.com/signup', formData);
       setSuccessMessage('Signup successful! Redirecting...'); 
       localStorage.setItem('token', res.data.token);
       setTimeout(() => {
