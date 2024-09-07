@@ -11,12 +11,12 @@
     ],
     "routes": [
       {
-        "src": "/flashcard-server/(.*)",        
-        "dest": "/flashcard-server/index.js"    
+        "src": "/flashcards-server/(.*)",        
+        "dest": "/flashcards-server/index.js"    
       },
       {
         "src": "/(.*)",            
-        "dest": "/flashcard-client/$1"       
+        "dest": "/flashcards-client/$1"       
       }
     ]
   }
