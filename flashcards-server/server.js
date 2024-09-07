@@ -31,7 +31,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.use('/api/flashcards', flashcardRoutes); 
 app.use('/api/payment', paymentRoutes);
-app.use('/', require('./routes/authRoutes'));
+app.use('/api', authRoutes);
 
 app.use(express.static(path.join(__dirname, '..', 'flashcards-client', 'build')));
 

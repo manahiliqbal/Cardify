@@ -23,7 +23,7 @@ const LoginPage = () => {
 
     try {
       
-      const res = await axios.post('/login', formData);
+      const res = await axios.post('/api/login', formData); 
       setMessage('Login successful! Welcome back.');
       localStorage.setItem('token', res.data.token); 
       
