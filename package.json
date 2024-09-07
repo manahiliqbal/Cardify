@@ -4,8 +4,9 @@
   "description": "Backend for Flashcards SaaS application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "cd flashcards-client && npm install && npm run build"
+    "server": "nodemon ./flashcards-server/server.js",
+    "start": "node ./flashcards-server/server.js",
+    "build": "npm install && npm install --prefix flashcards-client && npm run build --prefix flashcards-client"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
