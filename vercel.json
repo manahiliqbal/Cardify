@@ -1,22 +1,32 @@
 {
     "builds": [
-        {
-            "src": "flashcards-server/server.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "flashcards-client/package.json",
-            "use": "@vercel/static-build"
+      {
+        "src": "flashcards-client/package.json", 
+        "use": "@vercel/static-build", 
+        "config": {
+          "distDir": "flashcards-client/build"
         }
+      },
+      {
+        "src": "flashcards-server/server.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/flashcards-server/server.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/flashcards-client/$1"
-        }
+      {
+        "src": "/api/(.*)",
+        "dest": "/flashcards-server/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/flashcards-client/$1"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)", 
+        "destination": "/index.html"
+      }
     ]
-}
+  }
+  
