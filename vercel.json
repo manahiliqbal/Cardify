@@ -1,0 +1,23 @@
+{
+    "builds": [
+      {
+        "src": "flashcards-server/server.js",    
+        "use": "@vercel/node"     
+      },
+      {
+        "src": "flashcards-client/package.json",   
+        "use": "@vercel/static-build"   
+      }
+    ],
+    "routes": [
+      {
+        "src": "/flashcard-server/(.*)",        
+        "dest": "/flashcard-server/index.js"    
+      },
+      {
+        "src": "/(.*)",            
+        "dest": "/flashcard-client/$1"       
+      }
+    ]
+  }
+  
